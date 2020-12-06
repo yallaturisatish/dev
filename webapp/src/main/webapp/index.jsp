@@ -1,6 +1,6 @@
 <html>
 <body>
-<h1>Welcome To Satish Yallaturi webpage test1</h1>
+<h1>Welcome To Satish Yallaturi webpage</h1>
 </body>
 <body style="color:red;">
  <div class="container">
@@ -14,7 +14,7 @@
 <style>
 h1
 {
-  color:blue;
+  color:black;
   text-align:center;
 }
 h5
