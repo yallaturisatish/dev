@@ -21,7 +21,7 @@ pipeline
         {
             steps
             {
-                sh 'scp /home/ubuntu/.jenkins/workspace/DeclarativePipeline/webapp/target/webapp.war ubuntu@172.31.47.214:/var/lib/tomcat9/webapps/newtestapp.war'
+                sh 'scp /home/ubuntu/jenkins/workspace/DeclarativePipeline/webapp/target/webapp.war ubuntu@172.31.47.214:/var/lib/tomcat8/webapps/newtestapp.war'
             }
         }
         stage('ContinuousTesting')
@@ -29,14 +29,14 @@ pipeline
             steps
             {
                 git 'https://github.com/yallaturisatish/Testing.git'
-                sh 'java -jar /home/ubuntu/.jenkins/workspace/DeclarativePipeline/testing.jar'
+                sh 'java -jar /home/ubuntu/jenkins/workspace/DeclarativePipeline/testing.jar'
             }
         }
         stage('ContinuousDelivery')
         {
             steps
             {
-                 sh 'scp /home/ubuntu/.jenkins/workspace/DeclarativePipeline/webapp/target/webapp.war ubuntu@172.31.47.86:/var/lib/tomcat9/webapps/newprodapp.war'
+                 sh 'scp /home/ubuntu/jenkins/workspace/DeclarativePipeline/webapp/target/webapp.war ubuntu@172.31.47.86:/var/lib/tomcat8/webapps/newprodapp.war'
             }
         }
     }
