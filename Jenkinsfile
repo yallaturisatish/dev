@@ -7,7 +7,7 @@ pipeline
         {
             steps
             {
-                git 'https://github.com/intelliqittrainings/maven.git'
+                git 'https://github.com/yallaturisatish/dev.git'
             }
         }
         stage('ContinuousBuild')
@@ -21,14 +21,14 @@ pipeline
         {
             steps
             {
-                sh 'scp /home/ubuntu/.jenkins/workspace/DeclarativePipeline/webapp/target/webapp.war ubuntu@172.31.80.99:/var/lib/tomcat9/webapps/newtestapp.war'
+                sh 'scp /home/ubuntu/.jenkins/workspace/DeclarativePipeline/webapp/target/webapp.war ubuntu@172.31.47.214:/var/lib/tomcat9/webapps/newtestapp.war'
             }
         }
         stage('ContinuousTesting')
         {
             steps
             {
-                git 'https://github.com/intelliqittrainings/FunctionalTesting.git'
+                git 'https://github.com/yallaturisatish/Testing.git'
                 sh 'java -jar /home/ubuntu/.jenkins/workspace/DeclarativePipeline/testing.jar'
             }
         }
@@ -36,7 +36,7 @@ pipeline
         {
             steps
             {
-                 sh 'scp /home/ubuntu/.jenkins/workspace/DeclarativePipeline/webapp/target/webapp.war ubuntu@172.31.93.5:/var/lib/tomcat9/webapps/newprodapp.war'
+                 sh 'scp /home/ubuntu/.jenkins/workspace/DeclarativePipeline/webapp/target/webapp.war ubuntu@172.31.47.86:/var/lib/tomcat9/webapps/newprodapp.war'
             }
         }
     }
